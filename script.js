@@ -34,18 +34,18 @@ function syncCircleProgressActive() {
 
 // function myFunction(x) {
 // 	if (x.matches) { // If media query matches
-// 	  let active = document.querySelector('.active');
-// 	  let left = active.previousElementSibling;
-// 	  console.log(left)
-// 	  let right = active.nextElementSibling;
-// 	  console.log(right)
-// 	} else {
-// 	}
-//       }
+//           let active = document.querySelector('.active');
+//  	  let left = active.previousElementSibling;
+//  	  console.log(left)
+//  	  let right = active.nextElementSibling;
+//  	  console.log(right)
+//  	} else {
+//  	}
+//        }
       
-//       var x = window.matchMedia("(max-width: 480px)")
-//       myFunction(x) // Call listener function at run time
-//       x.addListener(myFunction) // Attach listener function on state changes 
+//        var x = window.matchMedia("(max-width: 480px)")
+//        myFunction(x) // Call listener function at run time
+//        x.addListener(myFunction) // Attach listener function on state changes 
 
 const progress = document.getElementById('progress')
 const prev = document.getElementById('prev')
@@ -91,8 +91,10 @@ function update(){
 
 	if(currentActive === 1){
 		prev.disabled = true
+		next.disabled = false
 	} else if (currentActive === circles.length){
 		next.disabled = true
+		prev.disabled = false
 	} else {
 		prev.disabled = false
 		next.disabled = false
@@ -109,4 +111,13 @@ function syncPanelActive() {
 			panel.classList.add('active')
 		}
 	})
+
+	// if(currentActive === 1){
+	// 	prev.disabled = true
+	// } else if (currentActive === circles.length){
+	// 	next.disabled = true
+	// } else {
+	// 	prev.disabled = false
+	// 	next.disabled = false
+	// }
 }
