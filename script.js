@@ -97,4 +97,16 @@ function update(){
 		prev.disabled = false
 		next.disabled = false
 	}
+	syncPanelActive()
+}
+
+function syncPanelActive() {
+	removeActiveClasses()
+	let counter = 0
+	panels.forEach(panel => {
+		counter++
+		if (counter === currentActive){
+			panel.classList.add('active')
+		}
+	})
 }
